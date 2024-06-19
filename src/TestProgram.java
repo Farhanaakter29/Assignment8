@@ -8,9 +8,6 @@ public class TestProgram {
         System.out.println("Balance after withdrawing $100: " + account.getBalance());
 
         account.withdraw(450);
-        System.out.println("Balance after trying to withdraw $450: " + account.getBalance());
-
-        account.withdraw(50);
-        System.out.println("Balance after withdrawing $50: " + account.getBalance());
+        System.out.println("Balance after withdrawing $450 (including overdraft penalty): " + account.getBalance());
     }
 }
