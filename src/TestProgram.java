@@ -1,19 +1,13 @@
 public class TestProgram {
     public static void main(String[] args) {
-        CheckingAccount account = new CheckingAccount(500);
+        NumericQuestion nq = new NumericQuestion();
+        nq.setText("What is 1 + 1?");
+        nq.setAnswer(2.0);
 
-        System.out.println("Initial Balance: " + account.getBalance());
-
-        account.withdraw(600);
-        System.out.println("Balance after first overdraft: " + account.getBalance());
-
-        account.withdraw(50);
-        System.out.println("Balance after second overdraft: " + account.getBalance());
-
-        account.deposit(700);
-        System.out.println("Balance after deposit: " + account.getBalance());
-
-        account.withdraw(1300);
-        System.out.println("Balance after third overdraft: " + account.getBalance());
+        System.out.println("Question: " + nq.display());
+        System.out.println("Response '2.0' is " + (nq.checkAnswer("2.0") ? "correct" : "incorrect"));
+        System.out.println("Response '2.01' is " + (nq.checkAnswer("2.01") ? "correct" : "incorrect"));
+        System.out.println("Response '1.98' is " + (nq.checkAnswer("1.98") ? "correct" : "incorrect"));
+        System.out.println("Response '3.0' is " + (nq.checkAnswer("3.0") ? "correct" : "incorrect"));
     }
 }
