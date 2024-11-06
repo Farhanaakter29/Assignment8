@@ -1,32 +1,18 @@
+import java.util.ArrayList;
+
 public class Question {
     private String text;
-    private String answer;
 
-    public void setText(String questionText) {
-        text = questionText;
+    public Question(String text) {
+        this.text = text;
     }
 
-    public void setAnswer(String correctResponse) {
-        answer = correctResponse;
+    public void display() {
+        System.out.println(text);
     }
 
-    public boolean checkAnswer(String response) {
-        // Normalize the answer and response strings
-        String normalizedAnswer = normalizeString(answer);
-        String normalizedResponse = normalizeString(response);
-
-        return normalizedResponse.equals(normalizedAnswer);
-    }
-
-    public String display() {
+    public String getText() {
         return text;
     }
-
-    // Helper method to normalize strings
-    private String normalizeString(String input) {
-        if (input == null) {
-            return "";
-        }
-        return input.trim().replaceAll("\\s+", " ").toLowerCase();
-    }
 }
+
