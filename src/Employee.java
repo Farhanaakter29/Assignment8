@@ -1,21 +1,25 @@
 public class Employee {
     private String name;
-    private double baseSalary;
+    private double salary;
 
-    public void setName(String newName) {
-        this.name = newName;
+    // Constructor
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
     }
 
-    public void setBaseSalary(double newSalary) {
-        this.baseSalary = newSalary;
-    }
-
+    // Getter methods
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public double getSalary() {
-        return this.baseSalary;
+        return salary;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Salary: $" + salary;
     }
 }
-

@@ -1,17 +1,20 @@
 public class Manager extends Employee {
-    private double bonus;
+    private String department;
 
     // Constructor
-    public Manager(String name, double baseSalary, double bonus) {
-        setName(name);
-        setBaseSalary(baseSalary);
-        this.bonus = bonus;
+    public Manager(String name, double salary, String department) {
+        super(name, salary); // Call the constructor of the superclass (Employee)
+        this.department = department;
     }
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+
+    // Getter method
+    public String getDepartment() {
+        return department;
     }
-    public double getSalary() {
-        return super.getSalary() + this.bonus;
+
+    // toString method
+    @Override
+    public String toString() {
+        return super.toString() + ", Department: " + department;
     }
 }
-
