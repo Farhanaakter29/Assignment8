@@ -1,30 +1,51 @@
-public class Question
-{
-  private String text;
- private String answer;
-    private String response;
 
-    public Question(String text) {
-        this.text = "";
+public class Question {
+    public String text;
+    public String text;
+    protected Object text;
+    private String answer;
+    public Question() {
+        text = "";
         answer = "";
-           }
-           public void setText(String questionText)
-   {
-         text = questionText;
-  }
- public void setAnswer(String correctResponse)
-   {
- answer = correctResponse;
-  }
-   public boolean checkAnswer(String response)
- {
-     this.response = response;
-     return response.equals(answer);
-  }
-    public void display()
-   {
-              System.out.println(text);
-   }
+    }
+
+    /**
+     * Sets the question text.
+     * @param questionText the text of this question
+     */
+    public void setText(String questionText) {
+        text = questionText;
+    }
+
+    /**
+     * Adds additional text to the question text.
+     * @param additionalText the additional text to append to the question
+     */
+    public void addText(String additionalText) {
+        text += " " + additionalText;
+    }
+
+    /**
+     * Sets the answer for this question.
+     * @param correctResponse the answer
+     */
+    public void setAnswer(String correctResponse) {
+        answer = correctResponse;
+    }
+
+    /**
+     * Checks a given response for correctness.
+     * @param response the response to check
+     * @return true if the response was correct, false otherwise
+     */
+    public boolean checkAnswer(String response) {
+        return response.equals(answer);
+    }
+
+    /**
+     * Displays this question.
+     */
+    public void display() {
+        System.out.println(text);
+    }
 }
-
-
