@@ -1,4 +1,4 @@
-public class TestBetterRectangle {
+public class  TestBetterRectangle {
     public static void main(String[] args) {
         // Create a BetterRectangle object with x=10, y=20, width=30, and height=40
         BetterRectangle rect = new BetterRectangle(10, 20, 30, 40);
