@@ -1,26 +1,31 @@
 import java.util.Scanner;
 
 /**
- * This program demonstrates a simple quiz with a question allowing multiple correct choices.
+ * This program demonstrates a multiple-choice question with multiple correct answers.
  */
 public class QuestionDemo1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        // Create an instance of AnyCorrectChoiceQuestion
-        AnyCorrectChoiceQuestion1 q = new AnyCorrectChoiceQuestion1();
-        q.setText("Name a programming language invented by James Gosling:");
+        // Create a MultiChoiceQuestion object
+        MultiChoiceQuestion mcq = new MultiChoiceQuestion();
 
-        // Set multiple correct answers (case-sensitive)
-        q.setAnswer("Java Oak");
+        // Set the question and multiple correct answers
+        mcq.setText("Which of the following are programming languages?");
+        mcq.setAnswers("Java Python C++");
 
         // Display the question
-        q.display();
-        System.out.print("Your answer: ");
+        mcq.display();
+
+        // Get the user's response
+        System.out.print("Your answers: ");
         String response = in.nextLine();
 
-        // Check the user's answer
-        System.out.println(q.checkAnswer(response));
+        // Check if the response is correct
+        boolean isCorrect = mcq.checkAnswer(response);
+        System.out.println("Correct? " + isCorrect);
+
+        in.close();
     }
 }
 

@@ -1,18 +1,30 @@
-import java.util.ArrayList;
-
-public class Question {
-    private String text;
+public class Question
+{
+  private String text;
+ private String answer;
+    private String response;
 
     public Question(String text) {
-        this.text = text;
-    }
-
-    public void display() {
-        System.out.println(text);
-    }
-
-    public String getText() {
-        return text;
-    }
+        this.text = "";
+        answer = "";
+           }
+           public void setText(String questionText)
+   {
+         text = questionText;
+  }
+ public void setAnswer(String correctResponse)
+   {
+ answer = correctResponse;
+  }
+   public boolean checkAnswer(String response)
+ {
+     this.response = response;
+     return response.equals(answer);
+  }
+    public void display()
+   {
+              System.out.println(text);
+   }
 }
+
 
