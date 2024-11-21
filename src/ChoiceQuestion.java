@@ -1,7 +1,4 @@
-/**
- * A multiple-choice question that uses addText to append choices to the question.
- */
-public class ChoiceQuestion extends Question {
+class ChoiceQuestion extends Question {
     /**
      * Adds a choice to the question. Each choice is prefixed with a number.
      * @param choice the choice text

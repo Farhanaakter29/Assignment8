@@ -1,9 +1,13 @@
-
+/**
+ * A question with a text and an answer.
+ */
 public class Question {
-    public String text;
-    public String text;
-    protected Object text;
+    private String text;
     private String answer;
+
+    /**
+     * Constructs a question with empty question and answer.
+     */
     public Question() {
         text = "";
         answer = "";
@@ -47,5 +51,14 @@ public class Question {
      */
     public void display() {
         System.out.println(text);
+    }
+
+    /**
+     * Returns a string representation of this question.
+     * @return a string representation of the question and answer
+     */
+    @Override
+    public String toString() {
+        return "Question: " + text + "\nAnswer: " + answer;
     }
 }

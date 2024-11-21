@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * This program demonstrates a multiple-choice question using addText for choices.
+ * This program demonstrates the usage of toString methods for Question and ChoiceQuestion.
  */
 public class QuestionDemo1 {
     public static void main(String[] args) {
@@ -25,6 +25,9 @@ public class QuestionDemo1 {
         // Display the question with choices
         cq.display();
 
+        // Print the string representation of the question
+        System.out.println("\n" + cq.toString());  // Prints the string representation
+
         // Get the user's response
         System.out.print("Your answer: ");
         String response = in.nextLine();
@@ -32,6 +35,12 @@ public class QuestionDemo1 {
         // Check if the response is correct
         boolean isCorrect = cq.checkAnswer(response);
         System.out.println("Correct? " + isCorrect);
+
+        // Test the toString method for the base Question class
+        Question q = new Question();
+        q.setText("What is the capital of France?");
+        q.setAnswer("Paris");
+        System.out.println("\n" + q.toString());  // Prints the string representation of a simple question
 
         in.close();
     }
